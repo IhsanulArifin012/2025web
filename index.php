@@ -22,6 +22,11 @@
                 <td>E020323012</td>
                 <td>Muhammad Ihsanul Arifin</td>
             </tr>
+            <tr>
+                <td>2</td>
+                <td>E020323060</td>
+                <td>Aulia Ramadhani</td>
+            </tr>
         </tbody>
     </table>
 </body>
