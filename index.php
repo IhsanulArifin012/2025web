@@ -11,16 +11,16 @@
     <table border="1" cellspacing="0" cellpadding= "5">
         <thead>
             <tr>
-                <th>No</th>
-                <th>NIM</th>
-                <th>Nama</th>
+                <td>No</td>
+                <td>NIM</td>
+                <td>Nama</td>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <th>1</th>
-                <th>E020323012</th>
-                <th>Muhammad Ihsanul Arifin</th>
+                <td>1</td>
+                <td>E020323012</td>
+                <td>Muhammad Ihsanul Arifin</td>
             </tr>
         </tbody>
     </table>
