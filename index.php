@@ -32,6 +32,7 @@ $data  = ambildata($query);
                 <td>Tanggal Lahir</td>
                 <td>No Telepon</td>
                 <td>Email</td>
+                <td>Id</td>
                 
             </tr>
         </thead>
@@ -48,6 +49,7 @@ $data  = ambildata($query);
                 <td><?php echo $d["tanggal_lahir"] ?> </td>
                 <td><?php echo $d["telp"] ?> </td>
                 <td><?php echo $d["email"] ?> </td>
+                <td><?php echo $d["id"] ?> </td>
                 
                 
             </tr>

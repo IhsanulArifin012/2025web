@@ -5,7 +5,7 @@ $database = "poliban";
 $username = "root";
 $password = "";
 
-$query = "SELECT * FROM mahasiswa";
+$query = "SELECT * FROM prodi";
 $data  = ambildata($query);
 
 
