@@ -5,15 +5,9 @@ $database = "poliban";
 $username = "root";
 $password = "";
 
-$conn = mysqli_connect($servername, $username, $password, $database); 
-
 $query = "SELECT * FROM mahasiswa";
-$hasil = mysqli_query($conn, $query);
+$data  = ambildata($query);
 
-$data= [];
-while ($baris = mysqli_fetch_assoc($hasil)) {
-    $data[] = $baris;
-}
 
 
 
