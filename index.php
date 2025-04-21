@@ -5,12 +5,8 @@ $database = "poliban";
 $username = "root";
 $password = "";
 
-$query = "SELECT * FROM mahasiswa";
+$query = "SELECT m.*, p.nama namaProdi FROM mahasiswa m JOIN prodi p ON m.id = p.id";
 $data  = ambildata($query);
-
-
-
-
 
 ?>
 <!DOCTYPE html>
@@ -19,10 +15,78 @@ $data  = ambildata($query);
     <meta charset="UTF-8">   
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIMPADU POLIBAN</title>
+    <style>
+        body {
+            background-color: #1e1e2f; /* Abu gelap */
+            color: #e0e0e0; /* Putih lembut */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffffff;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: #4fc3f7; /* Biru soft */
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #81d4fa;
+            text-decoration: underline;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #2b2b3c;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+
+        th, td {
+            border: 1px solid #3c3c55;
+            padding: 12px;
+            text-align: center;
+        }
+
+        thead {
+            background-color: #343454;
+            color: #ffffff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #2c2c40;
+        }
+
+        tr:hover {
+            background-color: #3d3d5c;
+        }
+
+        .tambah-link {
+            display: inline-block;
+            margin-bottom: 15px;
+            padding: 8px 16px;
+            background-color: #4fc3f7;
+            color: #000;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        .tambah-link:hover {
+            background-color: #29b6f6;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
     <h1>DATA MAHASISWA</h1>
     <br>
+    <a href="tambahmahasiswa.php">Tambah</a>
     <table border="1" cellspacing="0" cellpadding= "5">
         <thead>
             <tr>
@@ -32,7 +96,8 @@ $data  = ambildata($query);
                 <td>Tanggal Lahir</td>
                 <td>No Telepon</td>
                 <td>Email</td>
-                <td>Id</td>
+                <td>Prodi</td>
+                <td>Aksi</td>
                 
             </tr>
         </thead>
@@ -49,8 +114,10 @@ $data  = ambildata($query);
                 <td><?php echo $d["tanggal_lahir"] ?> </td>
                 <td><?php echo $d["telp"] ?> </td>
                 <td><?php echo $d["email"] ?> </td>
-                <td><?php echo $d["id"] ?> </td>
-                
+                <td><?php echo $d["namaProdi"] ?> </td>
+                <td><a href="deletemahasiswa.php?nim=<?= $d['nim']; ?>"
+                onclick="return confirm('Yakin ingin hapus?')">Delete</a> | 
+                <a href="editmahasiswa.php?nim=<?= $d['nim']; ?>">Edit</a></td>
                 
             </tr>
             <?php endforeach; ?>
