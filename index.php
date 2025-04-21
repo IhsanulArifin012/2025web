@@ -116,7 +116,7 @@ $data  = ambildata($query);
                 <td><?php echo $d["email"] ?> </td>
                 <td><?php echo $d["namaProdi"] ?> </td>
                 <td><a href="deletemahasiswa.php?nim=<?= $d['nim']; ?>"
-                onclick="return confirm('Yakin ingin hapus?')">Delete</a> | 
+                onclick="return confirm('YAKIN JA LAH MEHAPUS NII ?! (HALA MADRID)')">Delete</a> | 
                 <a href="editmahasiswa.php?nim=<?= $d['nim']; ?>">Edit</a></td>
                 
             </tr>
