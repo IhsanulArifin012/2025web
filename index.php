@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (!isset($_SESSION['login'])) {
+    header("Location: login.html");
+}
+
 include "koneksi.php";
 $servername = "localhost";
 $database = "poliban";
@@ -124,5 +129,6 @@ $data  = ambildata($query);
             
         </tbody>
     </table>
+    <a href="logout.php">Keluar</a>
 </body>
 </html>

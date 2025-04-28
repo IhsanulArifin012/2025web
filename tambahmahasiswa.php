@@ -1,6 +1,8 @@
-
 <?php
-
+session_start();
+if (!isset($_SESSION['login'])) {
+    header("Location: login.html");
+}
 include "koneksi.php";
 
 $query = "SELECT * FROM prodi";
