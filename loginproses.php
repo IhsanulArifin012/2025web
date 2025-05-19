@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 include 'koneksi.php';
 
@@ -13,17 +13,16 @@ $data = mysqli_fetch_assoc($hasil);
 if (password_verify($password, $data['password'])) {
     echo "password benar";
     $_SESSION['login'] = true;
-    header ("Location: index.php");
+    $_SESSION['nama'] = $data['nama'];
+    $_SESSION['foto'] = $data['foto'];
+
+    header("Location: index.php");
 } else {
     echo "password salah";
-    header ("Location: login.html");
+    header("Location: login.html");
 }
 
 echo "<br>";
 var_dump($password);
 echo "<br>";
 var_dump($data['password']);
-
-
-
-?>
